@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+depend()
+{
+        need rpcbind
+        before docker
+}
+
+start()
+{
+        mkdir -p /Users
+
+        ebegin "Mounting /Users share"
+        mount -t nfs -o noacl,noatime,async 192.168.65.1:/Users /Users
+        eend $?
+}
+
+stop()
+{
+        ebegin "Unmounting /Users share"
+        umount /Users
+        eend $?
+}
