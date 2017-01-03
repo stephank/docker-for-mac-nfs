@@ -9,6 +9,8 @@ rerun the setup on every upgrade of Docker for Mac.
 
 ## Specifics
 
+[Blog post](https://stephank.nl/p/2017-01-01-inside-dockers-moby.html)
+
 Docker for Mac transparently runs a virtual machine, which boots from a
 ramdisk. The ramdisk is an Alpine Linux based system called Moby. Shares
 configured in the preferences are normally mounted with a custom FUSE
