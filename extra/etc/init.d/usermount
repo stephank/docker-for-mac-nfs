@@ -11,7 +11,7 @@ start()
         mkdir -p /Users
 
         ebegin "Mounting /Users share"
-        mount -t nfs -o actimeo=2,noacl,noatime,nolock,async 192.168.65.1:/Users /Users
+        mount -t nfs -o actimeo=2,noacl,noatime,nolock,udp,async 192.168.65.1:/Users /Users
         eend $?
 }
 
