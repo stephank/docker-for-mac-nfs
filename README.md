@@ -17,9 +17,9 @@ configured in the preferences are normally mounted with a custom FUSE
 filesystem called `osxfs`, which has less than stellar performance.
 
 These scripts modify the ramdisk to setup NFS instead. The `import.sh` script
-imports the stock ramdisk into a Docker image. The `make.sh` script starts a
-container from that image, copies in the files from `extra/`, and runs
-`container-script.sh`. The container filesystem is then dumped back to a
+imports the stock ramdisk. The `make.sh` script starts a container that
+modifies its contents, adding files from `extra/`, and running
+`container-script.sh` in a chroot shell. The contents is then dumped back to a
 ramdisk, ready for use.
 
 The current setup is to add the `nfs-utils` package, and a custom init script
