@@ -15,3 +15,5 @@ tar -C extra -c . | docker cp - "${container}":/srv/
 docker start -ai "${container}" < container-script.sh
 # Extract the output.
 docker cp "${container}":/output.img initrd.img
+# Append the oiriginal tail.
+cat tail.bin >> initrd.img
